@@ -16,19 +16,18 @@ pipeline {
         }
         stage('Test') {
             steps{
-                dir('DevOps') {
-                    sh "ls -la "
-                    sh "pwd"
-                }
-                    sh "ls -la "
-                    sh "pwd"
+                sh "ls -la "
+                sh "pwd"
             }
         }
         stage('Build docker image') {
             steps{
-                dir('DevOps') {
-                    sh 'docker build -t angang3/jenkins-images:0.4 .'
-                }
+                sh 'docker build -t angang3/jenkins-images:0.4 .'
+            }
+        }
+        stage('Build docker container') {
+            steps{
+                sh 'docker run --rm angang3/jenkins-images:0.4 .'
             }
         }
         stage('Delete docker image locally') {
