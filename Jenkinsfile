@@ -22,17 +22,17 @@ pipeline {
         }
         stage('Build docker image') {
             steps{
-                sh 'docker build -t angang3/jenkins-images:0.4 .'
+                sh 'sudo docker build -t angang3 .'
             }
         }
         stage('Build docker container') {
             steps{
-                sh 'docker run --rm angang3/jenkins-images:0.4 .'
+                sh 'sudo docker run --rm angang3 .'
             }
         }
         stage('Delete docker image locally') {
             steps{
-                sh 'docker rmi angang3/jenkins-images:0.4'
+                sh 'sudo docker rmi angang3/jenkins-images:0.4'
             }
         }
     }
