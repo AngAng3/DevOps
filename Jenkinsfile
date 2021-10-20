@@ -22,12 +22,12 @@ pipeline {
         }
         stage('Build docker image') {
             steps{
-                sh 'sudo docker build -t angang3 .'
+                sh 'docker build -t angang3 .'
             }
         }
         stage('Build docker container') {
             steps{
-                sh 'sudo docker run --rm angang3 .'
+                sh 'docker run --rm angang3 .'
             }
         }
         stage('Delete docker image locally') {
