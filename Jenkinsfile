@@ -20,14 +20,14 @@ pipeline {
                 sh "pwd"
             }
         }
+        stage('Run') {
+            steps{
+                sh 'python3 server.py'
+            }
+        }
         stage('Build docker image') {
             steps{
                 sh 'docker build -t angang3 .'
-            }
-        }
-        stage('Run docker image') {
-            steps{
-                sh 'docker run -t angang3 .'
             }
         }
         stage('Build docker container') {
