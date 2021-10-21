@@ -1,4 +1,4 @@
 FROM python:3
-COPY ..
+COPY *.py /mydir/
 EXPOSE 8080
 ENTRYPOINT ["python3", "server.py"]
