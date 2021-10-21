@@ -10,4 +10,5 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
 SERVER_PORT = 8000
 httpd = HTTPServer(('0.0.0.0', SERVER_PORT), SimpleHTTPRequestHandler)
 print('Listening on port %s ...' % SERVER_PORT)
-httpd.serve_forever()
+#httpd.serve_forever()
+httpd.server_close()
