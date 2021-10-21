@@ -30,6 +30,11 @@ pipeline {
                 sh 'docker build -t angang3 .'
             }
         }
+        stage('Run docker image') {
+            steps{
+                sh 'docker run -t angang3 .'
+            }
+        }
         stage('Build docker container') {
             steps{
                 sh 'docker run --rm angang3 .'
