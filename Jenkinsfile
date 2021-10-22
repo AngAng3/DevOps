@@ -40,10 +40,5 @@ pipeline {
                 sh 'docker run --rm angang3 .'
             }
         }
-        stage('Delete docker image locally') {
-            steps{
-                sh 'docker rmi angang3'
-            }
-        }
     }
 }
